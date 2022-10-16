@@ -1,0 +1,16 @@
+npm install redux react-redux @reduxjs/toolkit
+npm install -D @types/react-redux
+
+
+- store:storage      => Local onde armazera inf. (Fica dentro do provider)
+- provider           => disponobiliza a 'store' de forma que a app inteira tenha acesso as inf da atore
+- reducers:slice     => ações 
+- actions:dispatches => Ações espeficas para alteração de dados através dos dispatches (Fica dentro do reducer:slice)
+- selectors          =>  pega as infos que estão dentro das stores
+
+1° Criar os reducers (useReducer, themeReducer) => "Grupos de informações"
+2º Cria a store => add todos os reducers dentro configureStore/reducer 
+3° Envolver toda a aplicação dentro do Provider (Add a store que foi criada dentro do arquivo store)
+4º Criar o Hook useAppSelector (Envolve todas as store em um unico lugar, para que toda a aplicação tenha acesso as todos os reducers)
+5° Importar o Hook useAppSelector em qualquer parte/tela da aplicação e usar as infos
+6º Para alterar as infos do reducer basta importar as actions(slice.reducer) do reducer que precisar dentro do lugar/tela que precisar, * useDispatch() *
